@@ -29,6 +29,7 @@
     [super awakeFromNib];
     
     self.contentModel = [ARRContentModel new];
+    self.scoreModel = [ARRScoreModel sharedScoreModel];
 }
 
 #pragma mark -
@@ -38,6 +39,14 @@
     if (_contentModel != contentModel) {
         _contentModel = contentModel;
         [self fillWithContentModel:contentModel];
+        self.subviewsVisible = YES;
+    }
+}
+
+- (void)setScoreModel:(ARRScoreModel *)scoreModel {
+    if (_scoreModel != scoreModel) {
+        _scoreModel = scoreModel;
+        [self fillWithScoreModel:scoreModel];
         self.subviewsVisible = YES;
     }
 }
@@ -68,7 +77,10 @@
     self.contentImageView.image = model.image;
 }
 
-
+- (void)fillWithScoreModel:(ARRScoreModel *)model {
+    self.maxAchievement.text = [NSString stringWithFormat:@"%d", model.highScore];
+    self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
+}
 
 #pragma mark -
 #pragma mark Event Handling
