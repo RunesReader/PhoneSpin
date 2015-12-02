@@ -21,6 +21,8 @@
 		7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */; };
 		7830E5FF1C047CC40096C6B7 /* ARRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5FE1C047CC40096C6B7 /* ARRViewController.m */; };
 		7830E6031C051CA30096C6B7 /* ARRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E6021C051CA30096C6B7 /* ARRView.m */; };
+		784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191041C0F1231005D8B64 /* LevelsFactor.plist */; };
+		784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191061C0F1D17005D8B64 /* LevelsNames.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7830E5FE1C047CC40096C6B7 /* ARRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRViewController.m; sourceTree = "<group>"; };
 		7830E6011C051CA30096C6B7 /* ARRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRView.h; sourceTree = "<group>"; };
 		7830E6021C051CA30096C6B7 /* ARRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRView.m; sourceTree = "<group>"; };
+		784191041C0F1231005D8B64 /* LevelsFactor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsFactor.plist; sourceTree = "<group>"; };
+		784191061C0F1D17005D8B64 /* LevelsNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsNames.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				78097C991C06427200848BE3 /* ARRScoreModel.h */,
 				78097C9A1C06427200848BE3 /* ARRScoreModel.m */,
+				784191041C0F1231005D8B64 /* LevelsFactor.plist */,
+				784191061C0F1D17005D8B64 /* LevelsNames.plist */,
 			);
 			path = ARRScoreModel;
 			sourceTree = "<group>";
@@ -341,7 +347,9 @@
 			files = (
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
+				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
+				784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneSpin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Igor-Arsenkin.PhoneSpin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneSpin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Igor-Arsenkin.PhoneSpin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
