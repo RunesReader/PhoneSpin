@@ -1,13 +1,13 @@
 //
-//  ARRUniversalMacroses.h
+//  ARRUniversalMacros.h
 //  Task#1
 //
 //  Created by Igor Arsenkin on 15.09.15.
 //  Copyright (c) 2015 Igor Arsenkin. All rights reserved.
 //
 
-#ifndef Task_1_ARRUniversalMacroses_h
-#define Task_1_ARRUniversalMacroses_h
+#ifndef Task_1_ARRUniversalMacros_h
+#define Task_1_ARRUniversalMacros_h
 
 //************************************
 
