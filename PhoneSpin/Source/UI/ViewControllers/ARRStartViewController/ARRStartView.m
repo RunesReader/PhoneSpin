@@ -11,7 +11,10 @@
 #import "ARRContentModel.h"
 #import "ARRScoreModel.h"
 
+static const NSTimeInterval kARRTimerInterval = 1.0;
+
 @interface ARRStartView ()
+@property (nonatomic, assign) NSInteger counter;
 @property (nonatomic, assign, getter=areSubviewsVisible)    BOOL    subviewsVisible;
 
 @end
@@ -80,6 +83,27 @@
 - (void)fillWithScoreModel:(ARRScoreModel *)model {
     self.maxAchievement.text = [NSString stringWithFormat:@"%d", model.highScore];
     self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
+}
+
+#pragma mark -
+#pragma mark Countdown Timer
+
+- (void)startConutdownWithValue:(NSInteger)startValue {
+    self.counter = startValue;
+    
+    __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:kARRTimerInterval
+                                                               target:self
+                                                             selector:@selector(advanceTimer:)
+                                                             userInfo:nil
+                                                              repeats:YES];
+}
+
+- (void)advanceTimer:(NSTimer *)timer {
+    self.counter--;
+    
+    if (self.counter < 0) {
+        [timer invalidate];
+    }
 }
 
 #pragma mark -
