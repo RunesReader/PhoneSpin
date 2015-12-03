@@ -23,6 +23,8 @@
 		7830E6031C051CA30096C6B7 /* ARRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E6021C051CA30096C6B7 /* ARRView.m */; };
 		784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191041C0F1231005D8B64 /* LevelsFactor.plist */; };
 		784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191061C0F1D17005D8B64 /* LevelsNames.plist */; };
+		784191101C10C3FD005D8B64 /* ARRFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */; };
+		784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		7830E6021C051CA30096C6B7 /* ARRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRView.m; sourceTree = "<group>"; };
 		784191041C0F1231005D8B64 /* LevelsFactor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsFactor.plist; sourceTree = "<group>"; };
 		784191061C0F1D17005D8B64 /* LevelsNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsNames.plist; sourceTree = "<group>"; };
+		7841910D1C10C3FD005D8B64 /* ARRFailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRFailViewController.h; sourceTree = "<group>"; };
+		7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRFailViewController.m; sourceTree = "<group>"; };
+		7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRFailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +216,9 @@
 		7830E5E71C0381770096C6B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				78097C8F1C060F8100848BE3 /* ARRStartViewController */,
 				7830E5FC1C047C350096C6B7 /* ARRViewController */,
+				7841910C1C10C394005D8B64 /* ARRFailViewController */,
+				78097C8F1C060F8100848BE3 /* ARRStartViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -287,6 +293,16 @@
 			path = ARRView;
 			sourceTree = "<group>";
 		};
+		7841910C1C10C394005D8B64 /* ARRFailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7841910D1C10C3FD005D8B64 /* ARRFailViewController.h */,
+				7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */,
+				7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */,
+			);
+			path = ARRFailViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */,
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
 				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
@@ -370,6 +387,7 @@
 				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
 				78097C9F1C0642A300848BE3 /* ARRContentModel.m in Sources */,
 				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
+				784191101C10C3FD005D8B64 /* ARRFailViewController.m in Sources */,
 				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

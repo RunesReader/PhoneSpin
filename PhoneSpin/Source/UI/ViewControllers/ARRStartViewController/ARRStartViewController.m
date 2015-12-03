@@ -15,7 +15,8 @@
 typedef NS_ENUM(NSInteger, ARRControllerState) {
     kARRStartScreen,
     kARRFirstCountdown,
-    kARRSecondCountdown
+    kARRSecondCountdown,
+    kARRTimeIsUp
 };
 
 static const NSTimeInterval kARRTimerInterval   = 1.0;
@@ -68,6 +69,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
             self.state = kARRSecondCountdown;
         } else {
             [timer invalidate];
+            self.state = kARRTimeIsUp;
             
             return;
         }
@@ -83,6 +85,10 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     self.state = kARRFirstCountdown;
     [self startConutdownWithValue:kARRStartDelay];
     self.mainView.subviewsVisible = NO;
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 }
 
 @end
