@@ -61,15 +61,19 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 
 - (void)advanceTimer:(NSTimer *)timer {
     self.counter--;
-    NSInteger counter = self.counter;
     
-    if (counter < 0) {
-        [timer invalidate];
-        
-        return;
+    if (self.counter < 0) {
+        if (kARRFirstCountdown == self.state) {
+            self.counter = kARRSpiningTime;
+            self.state = kARRSecondCountdown;
+        } else {
+            [timer invalidate];
+            
+            return;
+        }
     }
     
-    [self.mainView fillWithCountdownValue:counter];
+    [self.mainView fillWithCountdownValue:self.counter];
 }
 
 #pragma mark -
