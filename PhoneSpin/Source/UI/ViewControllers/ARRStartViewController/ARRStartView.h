@@ -23,9 +23,10 @@
 
 @property (nonatomic, strong)   ARRContentModel                     *contentModel;
 @property (nonatomic, strong)   ARRScoreModel                       *scoreModel;
+@property (nonatomic, assign, getter=areSubviewsVisible)    BOOL    subviewsVisible;
 
 - (void)fillWithContentModel:(ARRContentModel *)model;
 - (void)fillWithScoreModel:(ARRScoreModel *)model;
-- (void)fillWithCountdownTimer;
+- (void)fillWithCountdownValue:(NSInteger)value;
 
 @end
