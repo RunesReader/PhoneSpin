@@ -23,6 +23,7 @@
 		7830E6031C051CA30096C6B7 /* ARRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E6021C051CA30096C6B7 /* ARRView.m */; };
 		784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191041C0F1231005D8B64 /* LevelsFactor.plist */; };
 		784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191061C0F1D17005D8B64 /* LevelsNames.plist */; };
+		7841910B1C1050A4005D8B64 /* ARRCountdownModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841910A1C1050A4005D8B64 /* ARRCountdownModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		7830E6021C051CA30096C6B7 /* ARRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRView.m; sourceTree = "<group>"; };
 		784191041C0F1231005D8B64 /* LevelsFactor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsFactor.plist; sourceTree = "<group>"; };
 		784191061C0F1D17005D8B64 /* LevelsNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsNames.plist; sourceTree = "<group>"; };
+		784191091C1050A4005D8B64 /* ARRCountdownModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRCountdownModel.h; sourceTree = "<group>"; };
+		7841910A1C1050A4005D8B64 /* ARRCountdownModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRCountdownModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,7 @@
 		7830E5E41C035C0A0096C6B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				784191081C105056005D8B64 /* ARRCountdownModel */,
 				78097C9C1C06428300848BE3 /* ARRContentModel */,
 				78097C981C06422700848BE3 /* ARRScoreModel */,
 			);
@@ -287,6 +291,15 @@
 			path = ARRView;
 			sourceTree = "<group>";
 		};
+		784191081C105056005D8B64 /* ARRCountdownModel */ = {
+			isa = PBXGroup;
+			children = (
+				784191091C1050A4005D8B64 /* ARRCountdownModel.h */,
+				7841910A1C1050A4005D8B64 /* ARRCountdownModel.m */,
+			);
+			path = ARRCountdownModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +378,7 @@
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
 				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
 				7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */,
+				7841910B1C1050A4005D8B64 /* ARRCountdownModel.m in Sources */,
 				78097C971C06105100848BE3 /* ARRStartView.m in Sources */,
 				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
 				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
