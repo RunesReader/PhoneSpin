@@ -25,6 +25,7 @@
 		784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 784191061C0F1D17005D8B64 /* LevelsNames.plist */; };
 		784191101C10C3FD005D8B64 /* ARRFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */; };
 		784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */; };
+		784191141C10C9FB005D8B64 /* ARRFailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784191131C10C9FB005D8B64 /* ARRFailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		7841910D1C10C3FD005D8B64 /* ARRFailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRFailViewController.h; sourceTree = "<group>"; };
 		7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRFailViewController.m; sourceTree = "<group>"; };
 		7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRFailViewController.xib; sourceTree = "<group>"; };
+		784191121C10C9FB005D8B64 /* ARRFailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRFailView.h; sourceTree = "<group>"; };
+		784191131C10C9FB005D8B64 /* ARRFailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRFailView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +302,8 @@
 				7841910D1C10C3FD005D8B64 /* ARRFailViewController.h */,
 				7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */,
 				7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */,
+				784191121C10C9FB005D8B64 /* ARRFailView.h */,
+				784191131C10C9FB005D8B64 /* ARRFailView.m */,
 			);
 			path = ARRFailViewController;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
 				78097C9F1C0642A300848BE3 /* ARRContentModel.m in Sources */,
 				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
+				784191141C10C9FB005D8B64 /* ARRFailView.m in Sources */,
 				784191101C10C3FD005D8B64 /* ARRFailViewController.m in Sources */,
 				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
