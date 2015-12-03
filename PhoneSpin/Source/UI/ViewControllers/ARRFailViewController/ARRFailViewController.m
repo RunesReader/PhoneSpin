@@ -8,6 +8,12 @@
 
 #import "ARRFailViewController.h"
 
+#import "ARRFailView.h"
+
+#import "ARRUniversalMacros.h"
+
+ARRViewControllerMainViewProperty(ARRFailViewController, mainView, ARRFailView)
+
 @implementation ARRFailViewController
 
 #pragma mark -
