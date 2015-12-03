@@ -58,8 +58,8 @@
                         <constraint firstAttribute="width" secondItem="qmF-XR-oTd" secondAttribute="height" multiplier="237:173" id="t6z-tS-Cty"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-bY-r8J">
-                    <rect key="frame" x="211" y="121" width="178" height="358.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-bY-r8J">
+                    <rect key="frame" x="218" y="121" width="164.5" height="358.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="300"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

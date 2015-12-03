@@ -26,5 +26,6 @@
 
 - (void)fillWithContentModel:(ARRContentModel *)model;
 - (void)fillWithScoreModel:(ARRScoreModel *)model;
+- (void)fillWithCountdownTimer;
 
 @end

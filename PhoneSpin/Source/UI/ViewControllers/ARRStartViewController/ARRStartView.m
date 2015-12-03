@@ -11,7 +11,8 @@
 #import "ARRContentModel.h"
 #import "ARRScoreModel.h"
 
-static const NSTimeInterval kARRTimerInterval = 1.0;
+static const NSTimeInterval kARRTimerInterval   = 1.0;
+static const NSInteger      kARRStartDelay      = 3;
 
 @interface ARRStartView ()
 @property (nonatomic, assign) NSInteger counter;
@@ -85,11 +86,16 @@ static const NSTimeInterval kARRTimerInterval = 1.0;
     self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
 }
 
+- (void)fillWithCountdownTimer {
+    self.countDownText.text = [NSString stringWithFormat:@"%d", self.counter];
+}
+
 #pragma mark -
 #pragma mark Countdown Timer
 
 - (void)startConutdownWithValue:(NSInteger)startValue {
     self.counter = startValue;
+    [self fillWithCountdownTimer];
     
     __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:kARRTimerInterval
                                                                target:self
@@ -103,13 +109,18 @@ static const NSTimeInterval kARRTimerInterval = 1.0;
     
     if (self.counter < 0) {
         [timer invalidate];
+        
+        return;
     }
+    
+    [self fillWithCountdownTimer];
 }
 
 #pragma mark -
 #pragma mark Event Handling
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self startConutdownWithValue:kARRStartDelay];
     self.subviewsVisible = NO;
 }
 
