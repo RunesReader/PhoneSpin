@@ -18,6 +18,7 @@
 
 - (void)dealloc {
     self.contentModel = nil;
+    self.scoreModel = nil;
 }
 
 - (void)awakeFromNib {

@@ -12,13 +12,21 @@
 
 #import "ARRUniversalMacros.h"
 
+typedef NS_ENUM(NSInteger, ARRControllerState) {
+    kARRStartScreen,
+    kARRFirstCountdown,
+    kARRSecondCountdown
+};
+
 static const NSTimeInterval kARRTimerInterval   = 1.0;
 static const NSInteger      kARRStartDelay      = 3;
+static const NSInteger      kARRSpiningTime     = 8;
 
 ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView)
 
 @interface ARRStartViewController ()
-@property (nonatomic, assign) NSInteger counter;
+@property (nonatomic, assign)   NSInteger           counter;
+@property (nonatomic, assign)   ARRControllerState  state;
 
 @end
 
@@ -29,6 +37,8 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.state = kARRStartScreen;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +76,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 #pragma mark Event Handling
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.state = kARRFirstCountdown;
     [self startConutdownWithValue:kARRStartDelay];
     self.mainView.subviewsVisible = NO;
 }
