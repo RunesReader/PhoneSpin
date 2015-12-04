@@ -26,6 +26,9 @@
 		784191101C10C3FD005D8B64 /* ARRFailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841910E1C10C3FD005D8B64 /* ARRFailViewController.m */; };
 		784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */; };
 		784191141C10C9FB005D8B64 /* ARRFailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784191131C10C9FB005D8B64 /* ARRFailView.m */; };
+		784191191C120966005D8B64 /* ARRResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784191171C120966005D8B64 /* ARRResultViewController.m */; };
+		7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784191181C120966005D8B64 /* ARRResultViewController.xib */; };
+		7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841911C1C122BBF005D8B64 /* ARRResultView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,11 @@
 		7841910F1C10C3FD005D8B64 /* ARRFailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRFailViewController.xib; sourceTree = "<group>"; };
 		784191121C10C9FB005D8B64 /* ARRFailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRFailView.h; sourceTree = "<group>"; };
 		784191131C10C9FB005D8B64 /* ARRFailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRFailView.m; sourceTree = "<group>"; };
+		784191161C120966005D8B64 /* ARRResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRResultViewController.h; sourceTree = "<group>"; };
+		784191171C120966005D8B64 /* ARRResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRResultViewController.m; sourceTree = "<group>"; };
+		784191181C120966005D8B64 /* ARRResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRResultViewController.xib; sourceTree = "<group>"; };
+		7841911B1C122BBF005D8B64 /* ARRResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRResultView.h; sourceTree = "<group>"; };
+		7841911C1C122BBF005D8B64 /* ARRResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRResultView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				7830E5FC1C047C350096C6B7 /* ARRViewController */,
+				784191151C12092A005D8B64 /* ARRResultViewController */,
 				7841910C1C10C394005D8B64 /* ARRFailViewController */,
 				78097C8F1C060F8100848BE3 /* ARRStartViewController */,
 			);
@@ -308,6 +317,18 @@
 			path = ARRFailViewController;
 			sourceTree = "<group>";
 		};
+		784191151C12092A005D8B64 /* ARRResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				784191161C120966005D8B64 /* ARRResultViewController.h */,
+				784191171C120966005D8B64 /* ARRResultViewController.m */,
+				784191181C120966005D8B64 /* ARRResultViewController.xib */,
+				7841911B1C122BBF005D8B64 /* ARRResultView.h */,
+				7841911C1C122BBF005D8B64 /* ARRResultView.m */,
+			);
+			path = ARRResultViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +389,7 @@
 			files = (
 				784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */,
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
+				7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
 				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
@@ -383,6 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78097C9B1C06427200848BE3 /* ARRScoreModel.m in Sources */,
+				784191191C120966005D8B64 /* ARRResultViewController.m in Sources */,
+				7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */,
 				7830E5FF1C047CC40096C6B7 /* ARRViewController.m in Sources */,
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
 				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
