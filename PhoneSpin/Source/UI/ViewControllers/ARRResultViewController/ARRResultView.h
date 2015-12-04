@@ -9,5 +9,7 @@
 #import "ARRView.h"
 
 @interface ARRResultView : ARRView
+@property (nonatomic, strong) IBOutlet UILabel *achievement;
+@property (nonatomic, strong) IBOutlet UILabel *nameOfAchievement;
 
 @end

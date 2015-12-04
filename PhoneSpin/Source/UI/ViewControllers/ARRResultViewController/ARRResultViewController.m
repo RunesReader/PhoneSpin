@@ -27,4 +27,16 @@ ARRViewControllerMainViewProperty(ARRResultViewController, mainView, ARRResultVi
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)onTryAgainButton:(UIButton *)sender {
+    
+}
+
+- (IBAction)onSeeChartButton:(UIButton *)sender {
+    
+}
+
+
 @end
