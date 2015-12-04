@@ -29,6 +29,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 @interface ARRStartViewController ()
 @property (nonatomic, assign)   NSInteger           counter;
 @property (nonatomic, assign)   ARRControllerState  state;
+@property (nonatomic, strong)   NSTimer             *timer;
 
 @end
 
@@ -54,7 +55,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     self.counter = startValue;
     [self.mainView fillWithCountdownValue:startValue];
     
-    __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:kARRTimerInterval
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:kARRTimerInterval
                                                                target:self
                                                              selector:@selector(advanceTimer:)
                                                              userInfo:nil
@@ -89,6 +90,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.timer invalidate];
     [self presentViewController:[ARRFailViewController new] animated:NO completion:nil];
 }
 

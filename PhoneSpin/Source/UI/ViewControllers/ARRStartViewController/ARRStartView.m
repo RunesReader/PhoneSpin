@@ -47,9 +47,6 @@
     }
 }
 
-#pragma mark -
-#pragma mark Private Accessors
-
 - (void)setSubviewsVisible:(BOOL)subviewsVisible {
     if (_subviewsVisible != subviewsVisible) {
         _subviewsVisible = subviewsVisible;
