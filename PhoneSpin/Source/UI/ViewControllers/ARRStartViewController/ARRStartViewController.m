@@ -9,6 +9,7 @@
 #import "ARRStartViewController.h"
 
 #import "ARRStartView.h"
+#import "ARRFailViewController.h"
 
 #import "ARRUniversalMacros.h"
 
@@ -88,7 +89,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
+    [self presentViewController:[ARRFailViewController new] animated:NO completion:nil];
 }
 
 @end

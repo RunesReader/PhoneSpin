@@ -15,22 +15,39 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU  FAILED!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa5-fA-tH6">
-                    <rect key="frame" x="157" y="78" width="287" height="149"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIO-Yp-OBg">
+                    <rect key="frame" x="210" y="479" width="180" height="40"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="00C-u1-htU"/>
+                        <constraint firstAttribute="width" constant="180" id="wbx-lI-PKO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="TRY AGAIN"/>
+                    <connections>
+                        <action selector="onTryAgainButton:" destination="-1" eventType="touchUpInside" id="T0V-dk-ZQd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU  FAILED!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa5-fA-tH6">
+                    <rect key="frame" x="200" y="95" width="201" height="133"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="133" id="LhX-8O-yhd"/>
+                        <constraint firstAttribute="width" constant="201" id="s97-Ho-kvH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIO-Yp-OBg">
-                    <rect key="frame" x="210" y="479" width="180" height="40"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <state key="normal" title="TRY AGAIN"/>
-                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pa5-fA-tH6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="95" id="44R-xN-pky"/>
+                <constraint firstAttribute="bottom" secondItem="MIO-Yp-OBg" secondAttribute="bottom" constant="81" id="4xX-V1-jp8"/>
+                <constraint firstItem="MIO-Yp-OBg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HLz-R4-qdv"/>
+                <constraint firstItem="pa5-fA-tH6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zkr-ve-r7g"/>
+            </constraints>
         </view>
     </objects>
 </document>

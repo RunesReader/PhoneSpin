@@ -9,6 +9,7 @@
 #import "ARRFailViewController.h"
 
 #import "ARRFailView.h"
+#import "ARRStartViewController.h"
 
 #import "ARRUniversalMacros.h"
 
@@ -25,6 +26,13 @@ ARRViewControllerMainViewProperty(ARRFailViewController, mainView, ARRFailView)
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)onTryAgainButton:(id)sender {
+    [self presentViewController:[ARRStartViewController new] animated:YES completion:nil];
 }
 
 @end
