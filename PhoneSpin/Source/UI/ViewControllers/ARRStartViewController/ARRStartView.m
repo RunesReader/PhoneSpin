@@ -71,12 +71,12 @@
 }
 
 - (void)fillWithScoreModel:(ARRScoreModel *)model {
-    self.maxAchievement.text = [NSString stringWithFormat:@"%d", model.highScore];
+    self.maxAchievement.text = [NSString stringWithFormat:@"%ld", model.highScore];
     self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
 }
 
 - (void)fillWithCountdownValue:(NSInteger)value {
-    self.countDownText.text = [NSString stringWithFormat:@"%d", value];
+    self.countDownText.text = [NSString stringWithFormat:@"%ld", value];
 }
 
 @end
