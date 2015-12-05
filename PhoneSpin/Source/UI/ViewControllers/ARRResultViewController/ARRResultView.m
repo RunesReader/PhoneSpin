@@ -40,7 +40,7 @@
 
 - (void)fillWithScoreModel:(ARRScoreModel *)model {
     self.achievement.text = [NSString stringWithFormat:@"%ld", (long)model.currentScore];
-    self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
+    self.nameOfAchievement.text = [model achievementNameWithScore:model.currentScore];
 }
 
 @end

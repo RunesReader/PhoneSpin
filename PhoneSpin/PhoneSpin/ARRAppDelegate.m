@@ -9,6 +9,7 @@
 #import "ARRAppDelegate.h"
 
 #import "ARRStartViewController.h"
+#import "ARRScoreModel.h"
 
 #import "UIWindow+ARRWindow.h"
 #import "UIViewController+ARRExtensions.h"
@@ -26,7 +27,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
+    [[ARRScoreModel sharedScoreModel] save];
 }
 
 @end
