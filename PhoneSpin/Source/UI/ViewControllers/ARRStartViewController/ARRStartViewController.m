@@ -10,6 +10,7 @@
 
 #import "ARRStartView.h"
 #import "ARRFailViewController.h"
+#import "ARRResultViewController.h"
 
 #import "ARRUniversalMacros.h"
 
@@ -72,6 +73,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
         } else {
             [timer invalidate];
             self.state = kARRTimeIsUp;
+            [self presentViewController:[ARRResultViewController new] animated:NO completion:nil];
             
             return;
         }
