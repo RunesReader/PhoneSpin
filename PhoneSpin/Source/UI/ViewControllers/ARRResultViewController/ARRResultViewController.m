@@ -9,6 +9,7 @@
 #import "ARRResultViewController.h"
 
 #import "ARRResultView.h"
+#import "ARRStartViewController.h"
 
 #import "ARRUniversalMacros.h"
 
@@ -31,7 +32,7 @@ ARRViewControllerMainViewProperty(ARRResultViewController, mainView, ARRResultVi
 #pragma mark Actions
 
 - (IBAction)onTryAgainButton:(UIButton *)sender {
-    
+    [self presentViewController:[ARRStartViewController new] animated:YES completion:nil];
 }
 
 - (IBAction)onSeeChartButton:(UIButton *)sender {

@@ -8,8 +8,12 @@
 
 #import "ARRView.h"
 
+@class ARRScoreModel;
+
 @interface ARRResultView : ARRView
-@property (nonatomic, strong) IBOutlet UILabel *achievement;
-@property (nonatomic, strong) IBOutlet UILabel *nameOfAchievement;
+@property (nonatomic, weak)     IBOutlet UILabel    *achievement;
+@property (nonatomic, weak)     IBOutlet UILabel    *nameOfAchievement;
+
+@property (nonatomic, strong)   ARRScoreModel       *scoreModel;
 
 @end
