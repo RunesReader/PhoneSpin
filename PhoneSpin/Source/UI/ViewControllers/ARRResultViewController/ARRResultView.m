@@ -39,7 +39,7 @@
 #pragma mark Private
 
 - (void)fillWithScoreModel:(ARRScoreModel *)model {
-    self.achievement.text = [NSString stringWithFormat:@"%ld", (long)model.highScore];
+    self.achievement.text = [NSString stringWithFormat:@"%ld", (long)model.currentScore];
     self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
 }
 

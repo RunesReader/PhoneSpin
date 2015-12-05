@@ -75,8 +75,10 @@
                 <constraint firstAttribute="bottom" secondItem="8YF-d9-Yhh" secondAttribute="bottom" constant="30" id="BqN-5r-j76"/>
                 <constraint firstItem="buk-92-BYO" firstAttribute="top" secondItem="NAb-75-wuJ" secondAttribute="bottom" constant="27" id="BzO-5g-66x"/>
                 <constraint firstItem="NAb-75-wuJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OY9-fF-dsE"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="myi-AT-RCj" secondAttribute="trailing" constant="8" id="PaH-nG-8ED"/>
                 <constraint firstItem="NAb-75-wuJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="XFg-HQ-250"/>
                 <constraint firstItem="Yue-9Z-bZK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YMM-zh-PNK"/>
+                <constraint firstItem="myi-AT-RCj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Yhz-DD-sYG"/>
                 <constraint firstItem="Yn2-eS-QpI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCi-n3-HQf"/>
                 <constraint firstItem="Yn2-eS-QpI" firstAttribute="top" secondItem="buk-92-BYO" secondAttribute="bottom" constant="17" id="hrr-Ne-Ri1"/>
                 <constraint firstItem="myi-AT-RCj" firstAttribute="top" secondItem="Yn2-eS-QpI" secondAttribute="bottom" constant="12" id="sFZ-95-g2A"/>
