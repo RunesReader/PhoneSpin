@@ -32,7 +32,7 @@ ARRViewControllerMainViewProperty(ARRFailViewController, mainView, ARRFailView)
 #pragma mark Actions
 
 - (IBAction)onTryAgainButton:(id)sender {
-    [self presentViewController:[ARRStartViewController new] animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -

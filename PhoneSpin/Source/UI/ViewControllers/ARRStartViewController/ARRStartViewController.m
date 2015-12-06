@@ -73,7 +73,12 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
         } else {
             [timer invalidate];
             self.state = kARRTimeIsUp;
-            [self presentViewController:[ARRResultViewController new] animated:NO completion:nil];
+            
+            ARRWeakify(self);
+            [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
+                ARRStrongifyAndReturnIfNil(self);
+                self.mainView.subviewsVisible = YES;
+            }];
             
             return;
         }
@@ -93,7 +98,12 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.timer invalidate];
-    [self presentViewController:[ARRFailViewController new] animated:NO completion:nil];
+    
+    ARRWeakify(self);
+    [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
+        ARRStrongifyAndReturnIfNil(self);
+        self.mainView.subviewsVisible = YES;
+    }];
 }
 
 @end
