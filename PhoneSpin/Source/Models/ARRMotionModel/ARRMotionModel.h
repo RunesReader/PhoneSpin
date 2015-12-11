@@ -11,4 +11,6 @@
 
 @interface ARRMotionModel : NSObject
 
++ (instancetype)sharedMotionModel;
+
 @end
