@@ -30,6 +30,7 @@
 		7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784191181C120966005D8B64 /* ARRResultViewController.xib */; };
 		7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841911C1C122BBF005D8B64 /* ARRResultView.m */; };
 		784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */; };
+		784359481C1B23AA00EA9B21 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784359471C1B23AA00EA9B21 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		7841911C1C122BBF005D8B64 /* ARRResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRResultView.m; sourceTree = "<group>"; };
 		784359441C1B1BFB00EA9B21 /* ARRMotionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRMotionModel.h; sourceTree = "<group>"; };
 		784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRMotionModel.m; sourceTree = "<group>"; };
+		784359471C1B23AA00EA9B21 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784359481C1B23AA00EA9B21 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +173,7 @@
 		7830E5D81C03593B0096C6B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				784359471C1B23AA00EA9B21 /* CoreMotion.framework */,
 				7830E5DB1C035B020096C6B7 /* Base.lproj */,
 				7830E5D91C035ACA0096C6B7 /* Assets.xcassets */,
 			);
