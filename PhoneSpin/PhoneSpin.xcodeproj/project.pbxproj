@@ -29,6 +29,7 @@
 		784191191C120966005D8B64 /* ARRResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784191171C120966005D8B64 /* ARRResultViewController.m */; };
 		7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784191181C120966005D8B64 /* ARRResultViewController.xib */; };
 		7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841911C1C122BBF005D8B64 /* ARRResultView.m */; };
+		784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		784191181C120966005D8B64 /* ARRResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRResultViewController.xib; sourceTree = "<group>"; };
 		7841911B1C122BBF005D8B64 /* ARRResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRResultView.h; sourceTree = "<group>"; };
 		7841911C1C122BBF005D8B64 /* ARRResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRResultView.m; sourceTree = "<group>"; };
+		784359441C1B1BFB00EA9B21 /* ARRMotionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRMotionModel.h; sourceTree = "<group>"; };
+		784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRMotionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,7 @@
 		7830E5E41C035C0A0096C6B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				784359431C1B1AEC00EA9B21 /* ARRMotionModel */,
 				78097C9C1C06428300848BE3 /* ARRContentModel */,
 				78097C981C06422700848BE3 /* ARRScoreModel */,
 			);
@@ -329,6 +333,15 @@
 			path = ARRResultViewController;
 			sourceTree = "<group>";
 		};
+		784359431C1B1AEC00EA9B21 /* ARRMotionModel */ = {
+			isa = PBXGroup;
+			children = (
+				784359441C1B1BFB00EA9B21 /* ARRMotionModel.h */,
+				784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */,
+			);
+			path = ARRMotionModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +424,7 @@
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
 				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
 				7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */,
+				784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */,
 				78097C971C06105100848BE3 /* ARRStartView.m in Sources */,
 				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
 				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
