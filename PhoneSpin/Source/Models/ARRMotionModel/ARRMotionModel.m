@@ -8,8 +8,14 @@
 
 #import "ARRMotionModel.h"
 
+#import "ARRUniversalMacros.h"
+
+static const NSTimeInterval kARRUpdateInterval = 0.25f;
+static const double         kARRAccuracyFactor = 0.5f;
+
 @interface ARRMotionModel ()
-@property (nonatomic, strong) CMMotionManager *motionManager;
+@property (nonatomic, strong) CMMotionManager           *motionManager;
+@property (nonatomic, assign) __block NSUInteger        circlesCount;
 
 @end
 
@@ -35,6 +41,7 @@
     self = [super init];
     if (self) {
         self.motionManager = [[CMMotionManager alloc] init];
+        self.motionManager.deviceMotionUpdateInterval = kARRUpdateInterval;
     }
     
     return self;
@@ -44,11 +51,44 @@
 #pragma mark Public
 
 - (void)startMotionDetect {
+    if (self.motionManager.deviceMotionAvailable) {
+        CMAttitude *initialAttitude = self.motionManager.deviceMotion.attitude;
+        self.circlesCount = 0;
+        
+        ARRWeakify(self);
+        [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
+                                                                toQueue:[NSOperationQueue new]
+                                                            withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error)
+         {
+             if (error) {
+                 NSLog(@"%@", error);
+                 
+                 return;
+             }
+             
+             ARRStrongifyAndReturnIfNil(self);
+             [motion.attitude multiplyByInverseOfAttitude:initialAttitude];
+             double magnitude = [self magnitudeFromAttitude:motion.attitude];
+             
+             if (magnitude < kARRAccuracyFactor) {
+                 self.circlesCount++;
+             }
+             
+         }];
+    }
     
 }
 
 - (void)stopMotionDetect {
     [self.motionManager stopDeviceMotionUpdates];
+}
+
+#pragma mark -
+#pragma mark Private
+
+// Calculate magnitude of vector (Pythagor theorem)
+- (double)magnitudeFromAttitude:(CMAttitude *)attitude {
+    return sqrt(pow(attitude.roll, 2.0f) + pow(attitude.yaw, 2.0f) + pow(attitude.pitch, 2.0f));
 }
 
 @end

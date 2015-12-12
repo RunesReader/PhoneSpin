@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 
 @interface ARRMotionModel : NSObject
+@property (nonatomic, readonly) NSUInteger circlesCount;
 
 + (instancetype)sharedMotionModel;
 
