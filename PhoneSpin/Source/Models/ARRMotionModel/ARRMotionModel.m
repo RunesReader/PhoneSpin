@@ -8,6 +8,11 @@
 
 #import "ARRMotionModel.h"
 
+@interface ARRMotionModel ()
+@property (nonatomic, strong) CMMotionManager *motionManager;
+
+@end
+
 @implementation ARRMotionModel
 
 #pragma mark -
@@ -21,6 +26,29 @@
     });
     
     return __model;
+}
+
+#pragma mark -
+#pragma mark Deallocation and Initializations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.motionManager = [[CMMotionManager alloc] init];
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Public
+
+- (void)startMotionDetect {
+    
+}
+
+- (void)stopMotionDetect {
+    [self.motionManager stopDeviceMotionUpdates];
 }
 
 @end

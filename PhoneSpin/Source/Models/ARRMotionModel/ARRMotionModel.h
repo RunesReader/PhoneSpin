@@ -13,4 +13,7 @@
 
 + (instancetype)sharedMotionModel;
 
+- (void)startMotionDetect;
+- (void)stopMotionDetect;
+
 @end
