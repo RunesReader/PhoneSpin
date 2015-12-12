@@ -11,6 +11,8 @@
 #import "ARRStartView.h"
 #import "ARRFailViewController.h"
 #import "ARRResultViewController.h"
+#import "ARRMotionModel.h"
+#import "ARRScoreModel.h"
 
 #import "ARRUniversalMacros.h"
 
@@ -43,6 +45,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     [super viewDidLoad];
     
     self.state = kARRStartScreen;
+    self.motionModel = [ARRMotionModel sharedMotionModel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,9 +73,12 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
         if (kARRFirstCountdown == self.state) {
             self.counter = kARRSpiningTime;
             self.state = kARRSecondCountdown;
+            [self.motionModel startMotionDetect];
         } else {
             [timer invalidate];
             self.state = kARRTimeIsUp;
+            [self.motionModel stopMotionDetect];
+            [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
             
             ARRWeakify(self);
             [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
