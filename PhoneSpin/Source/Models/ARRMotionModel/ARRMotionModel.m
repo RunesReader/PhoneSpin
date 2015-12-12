@@ -11,7 +11,7 @@
 #import "ARRUniversalMacros.h"
 
 static const NSTimeInterval kARRUpdateInterval = 0.25f;
-static const double         kARRAccuracyFactor = 0.5f;
+static const double         kARRAccuracyFactor = 0.8f;
 
 @interface ARRMotionModel ()
 @property (nonatomic, strong) CMMotionManager           *motionManager;
@@ -42,6 +42,7 @@ static const double         kARRAccuracyFactor = 0.5f;
     if (self) {
         self.motionManager = [[CMMotionManager alloc] init];
         self.motionManager.deviceMotionUpdateInterval = kARRUpdateInterval;
+        [self.motionManager startDeviceMotionUpdates];
     }
     
     return self;
@@ -57,7 +58,7 @@ static const double         kARRAccuracyFactor = 0.5f;
         
         ARRWeakify(self);
         [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
-                                                                toQueue:[NSOperationQueue new]
+                                                                toQueue:[NSOperationQueue mainQueue]
                                                             withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error)
          {
              if (error) {

@@ -84,6 +84,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
             [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
                 ARRStrongifyAndReturnIfNil(self);
                 self.mainView.subviewsVisible = YES;
+                [self.mainView fillWithScoreModel:self.mainView.scoreModel];
             }];
             
             return;
