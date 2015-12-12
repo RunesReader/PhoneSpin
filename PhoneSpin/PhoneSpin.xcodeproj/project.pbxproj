@@ -31,6 +31,7 @@
 		7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841911C1C122BBF005D8B64 /* ARRResultView.m */; };
 		784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */; };
 		784359481C1B23AA00EA9B21 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784359471C1B23AA00EA9B21 /* CoreMotion.framework */; };
+		78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78F6DA561C1CA89600602D88 /* beep-09.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		784359441C1B1BFB00EA9B21 /* ARRMotionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRMotionModel.h; sourceTree = "<group>"; };
 		784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRMotionModel.m; sourceTree = "<group>"; };
 		784359471C1B23AA00EA9B21 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		78F6DA561C1CA89600602D88 /* beep-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-09.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		7830E5D81C03593B0096C6B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78F6DA561C1CA89600602D88 /* beep-09.wav */,
 				784359471C1B23AA00EA9B21 /* CoreMotion.framework */,
 				7830E5DB1C035B020096C6B7 /* Base.lproj */,
 				7830E5D91C035ACA0096C6B7 /* Assets.xcassets */,
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */,
+				78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */,
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,

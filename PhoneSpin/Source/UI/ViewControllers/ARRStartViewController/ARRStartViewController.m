@@ -13,6 +13,7 @@
 #import "ARRResultViewController.h"
 #import "ARRMotionModel.h"
 #import "ARRScoreModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 #import "ARRUniversalMacros.h"
 
@@ -74,11 +75,13 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
             self.counter = kARRSpiningTime;
             self.state = kARRSecondCountdown;
             [self.motionModel startMotionDetect];
+            [self playSound];
         } else {
             [timer invalidate];
             self.state = kARRTimeIsUp;
             [self.motionModel stopMotionDetect];
             [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
+            [self playSound];
             
             ARRWeakify(self);
             [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
@@ -111,6 +114,22 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
         ARRStrongifyAndReturnIfNil(self);
         self.mainView.subviewsVisible = YES;
     }];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)playSound {
+    static SystemSoundID sound;
+    
+    if (!sound) {
+        NSString *pewPewPath = [[NSBundle mainBundle]
+                                pathForResource:@"beep-09" ofType:@"wav"];
+        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &sound);
+    }
+    
+    AudioServicesPlaySystemSound(sound);
 }
 
 @end
