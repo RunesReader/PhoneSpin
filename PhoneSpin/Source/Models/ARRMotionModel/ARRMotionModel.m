@@ -10,8 +10,8 @@
 
 #import "ARRUniversalMacros.h"
 
-static const NSTimeInterval kARRUpdateInterval = 0.25f;
-static const double         kARRAccuracyFactor = 0.8f;
+static const NSTimeInterval kARRUpdateInterval = 0.05f;
+static const double         kARRAccuracyFactor = 0.13f;
 
 @interface ARRMotionModel ()
 @property (nonatomic, strong) CMMotionManager           *motionManager;

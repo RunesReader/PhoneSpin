@@ -72,16 +72,10 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     
     if (self.counter < 0) {
         if (kARRFirstCountdown == self.state) {
-            self.counter = kARRSpiningTime;
-            self.state = kARRSecondCountdown;
-            [self.motionModel startMotionDetect];
-            [self playSound];
+            [self setupSpinning];
         } else {
             [timer invalidate];
-            self.state = kARRTimeIsUp;
-            [self.motionModel stopMotionDetect];
-            [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
-            [self playSound];
+            [self stopSpinning];
             
             ARRWeakify(self);
             [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
@@ -123,13 +117,26 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     static SystemSoundID sound;
     
     if (!sound) {
-        NSString *pewPewPath = [[NSBundle mainBundle]
-                                pathForResource:@"beep-09" ofType:@"wav"];
+        NSString *pewPewPath = [[NSBundle mainBundle] pathForResource:@"beep-09" ofType:@"wav"];
         NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &sound);
     }
     
     AudioServicesPlaySystemSound(sound);
+}
+
+- (void)setupSpinning {
+    self.counter = kARRSpiningTime;
+    self.state = kARRSecondCountdown;
+    [self.motionModel startMotionDetect];
+    [self playSound];
+}
+
+- (void)stopSpinning {
+    self.state = kARRTimeIsUp;
+    [self.motionModel stopMotionDetect];
+    [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
+    [self playSound];
 }
 
 @end
