@@ -31,6 +31,7 @@
 		7841911D1C122BBF005D8B64 /* ARRResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7841911C1C122BBF005D8B64 /* ARRResultView.m */; };
 		784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */; };
 		784359481C1B23AA00EA9B21 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784359471C1B23AA00EA9B21 /* CoreMotion.framework */; };
+		78B8E47F1C1D8E540080A1DF /* fart-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E47E1C1D8E540080A1DF /* fart-01.wav */; };
 		78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78F6DA561C1CA89600602D88 /* beep-09.wav */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		784359441C1B1BFB00EA9B21 /* ARRMotionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRMotionModel.h; sourceTree = "<group>"; };
 		784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRMotionModel.m; sourceTree = "<group>"; };
 		784359471C1B23AA00EA9B21 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		78B8E47E1C1D8E540080A1DF /* fart-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fart-01.wav"; sourceTree = "<group>"; };
 		78F6DA561C1CA89600602D88 /* beep-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-09.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6DA561C1CA89600602D88 /* beep-09.wav */,
+				78B8E47E1C1D8E540080A1DF /* fart-01.wav */,
 				784359471C1B23AA00EA9B21 /* CoreMotion.framework */,
 				7830E5DB1C035B020096C6B7 /* Base.lproj */,
 				7830E5D91C035ACA0096C6B7 /* Assets.xcassets */,
@@ -412,6 +415,7 @@
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
+				78B8E47F1C1D8E540080A1DF /* fart-01.wav in Resources */,
 				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
 				784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */,

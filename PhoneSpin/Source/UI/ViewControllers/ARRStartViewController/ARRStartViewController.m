@@ -40,13 +40,24 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 @implementation ARRStartViewController
 
 #pragma mark -
+#pragma mark Deallocation and Initializations
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.motionModel = [ARRMotionModel sharedMotionModel];
+    }
+    
+    return self;
+}
+
+#pragma mark -
 #pragma mark ARRStartViewController Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.state = kARRStartScreen;
-    self.motionModel = [ARRMotionModel sharedMotionModel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +85,6 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
         if (kARRFirstCountdown == self.state) {
             [self setupSpinning];
         } else {
-            [timer invalidate];
             [self stopSpinning];
             
             ARRWeakify(self);
@@ -104,16 +114,14 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (0 == touches.count) {
-        [self.timer invalidate];
-        
-        ARRWeakify(self);
-        [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
-            ARRStrongifyAndReturnIfNil(self);
-            self.mainView.subviewsVisible = YES;
-            self.state = kARRStartScreen;
-        }];
-    }
+    [self.timer invalidate];
+    
+    ARRWeakify(self);
+    [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
+        ARRStrongifyAndReturnIfNil(self);
+        self.mainView.subviewsVisible = YES;
+        self.state = kARRStartScreen;
+    }];
 }
 
 #pragma mark -
@@ -139,6 +147,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 }
 
 - (void)stopSpinning {
+    [self.timer invalidate];
     self.state = kARRTimeIsUp;
     [self.motionModel stopMotionDetect];
     [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
