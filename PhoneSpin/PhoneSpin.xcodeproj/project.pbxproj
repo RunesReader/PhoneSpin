@@ -32,6 +32,9 @@
 		784359461C1B1BFB00EA9B21 /* ARRMotionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */; };
 		784359481C1B23AA00EA9B21 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784359471C1B23AA00EA9B21 /* CoreMotion.framework */; };
 		78B8E47F1C1D8E540080A1DF /* fart-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E47E1C1D8E540080A1DF /* fart-01.wav */; };
+		78B8E4831C1DC8120080A1DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */; };
+		78B8E4841C1DC8120080A1DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4811C1DC8120080A1DF /* Default.png */; };
+		78B8E4851C1DC8120080A1DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4821C1DC8120080A1DF /* Default@2x.png */; };
 		78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78F6DA561C1CA89600602D88 /* beep-09.wav */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		784359451C1B1BFB00EA9B21 /* ARRMotionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRMotionModel.m; sourceTree = "<group>"; };
 		784359471C1B23AA00EA9B21 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		78B8E47E1C1D8E540080A1DF /* fart-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fart-01.wav"; sourceTree = "<group>"; };
+		78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		78B8E4811C1DC8120080A1DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		78B8E4821C1DC8120080A1DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		78F6DA561C1CA89600602D88 /* beep-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-09.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,9 @@
 		7830E5D81C03593B0096C6B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */,
+				78B8E4811C1DC8120080A1DF /* Default.png */,
+				78B8E4821C1DC8120080A1DF /* Default@2x.png */,
 				78F6DA561C1CA89600602D88 /* beep-09.wav */,
 				78B8E47E1C1D8E540080A1DF /* fart-01.wav */,
 				784359471C1B23AA00EA9B21 /* CoreMotion.framework */,
@@ -410,15 +419,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B8E4851C1DC8120080A1DF /* Default@2x.png in Resources */,
 				784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */,
 				78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */,
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
+				78B8E4831C1DC8120080A1DF /* Default-568h@2x.png in Resources */,
 				7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
 				78B8E47F1C1D8E540080A1DF /* fart-01.wav in Resources */,
 				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
 				784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */,
+				78B8E4841C1DC8120080A1DF /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +557,6 @@
 		7830E5D51C0330A40096C6B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneSpin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -557,7 +568,6 @@
 		7830E5D61C0330A40096C6B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhoneSpin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
