@@ -28,9 +28,16 @@ static const NSTimeInterval kARRTimerInterval   = 1.0;
 static const NSInteger      kARRStartDelay      = 3;
 static const NSInteger      kARRSpiningTime     = 8;
 
+static NSString * const     kARRBeepFile        = @"beep-09";
+static NSString * const     kARRFartFile        = @"fart-01";
+static NSString * const     kARRWav             = @"wav";
+
 ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView)
 
-@interface ARRStartViewController ()
+@interface ARRStartViewController () {
+    SystemSoundID   beepSound;
+    SystemSoundID   fartSound;
+}
 @property (nonatomic, assign)   NSInteger           counter;
 @property (nonatomic, assign)   ARRControllerState  state;
 @property (nonatomic, strong)   NSTimer             *timer;
@@ -42,10 +49,18 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 #pragma mark -
 #pragma mark Deallocation and Initializations
 
+- (void)dealloc {
+    AudioServicesDisposeSystemSoundID(beepSound);
+    AudioServicesDisposeSystemSoundID(fartSound);
+}
+
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.motionModel = [ARRMotionModel sharedMotionModel];
+        
+        [self createSound:&beepSound withResource:kARRBeepFile ofType:kARRWav];
+        [self createSound:&fartSound withResource:kARRFartFile ofType:kARRWav];
     }
     
     return self;
@@ -115,6 +130,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.timer invalidate];
+    AudioServicesPlaySystemSound(fartSound);
     
     ARRWeakify(self);
     [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
@@ -127,23 +143,11 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 #pragma mark -
 #pragma mark Private
 
-- (void)playSound {
-    static SystemSoundID sound;
-    
-    if (!sound) {
-        NSString *pewPewPath = [[NSBundle mainBundle] pathForResource:@"beep-09" ofType:@"wav"];
-        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
-        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &sound);
-    }
-    
-    AudioServicesPlaySystemSound(sound);
-}
-
 - (void)setupSpinning {
     self.counter = kARRSpiningTime;
     self.state = kARRSecondCountdown;
     [self.motionModel startMotionDetect];
-    [self playSound];
+    AudioServicesPlaySystemSound(beepSound);
 }
 
 - (void)stopSpinning {
@@ -151,7 +155,13 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     self.state = kARRTimeIsUp;
     [self.motionModel stopMotionDetect];
     [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
-    [self playSound];
+    AudioServicesPlaySystemSound(beepSound);
+}
+
+- (void)createSound:(SystemSoundID *)sound withResource:(NSString *)resource ofType:(NSString *)type {
+    NSString *path = [[NSBundle mainBundle] pathForResource:resource ofType:type];
+    NSURL *urlSound = [NSURL fileURLWithPath:path];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)urlSound, sound);
 }
 
 @end
