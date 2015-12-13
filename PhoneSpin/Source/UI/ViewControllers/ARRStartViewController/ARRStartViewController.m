@@ -81,6 +81,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
             [self presentViewController:[ARRResultViewController new] animated:NO completion:^{
                 ARRStrongifyAndReturnIfNil(self);
                 self.mainView.subviewsVisible = YES;
+                self.state = kARRStartScreen;
                 [self.mainView fillWithScoreModel:self.mainView.scoreModel];
             }];
             
@@ -95,19 +96,24 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 #pragma mark Event Handling
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.state = kARRFirstCountdown;
-    [self startConutdownWithValue:kARRStartDelay];
-    self.mainView.subviewsVisible = NO;
+    if (kARRStartScreen == self.state) {
+        self.state = kARRFirstCountdown;
+        [self startConutdownWithValue:kARRStartDelay];
+        self.mainView.subviewsVisible = NO;
+    }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.timer invalidate];
-    
-    ARRWeakify(self);
-    [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
-        ARRStrongifyAndReturnIfNil(self);
-        self.mainView.subviewsVisible = YES;
-    }];
+    if (0 == touches.count) {
+        [self.timer invalidate];
+        
+        ARRWeakify(self);
+        [self presentViewController:[ARRFailViewController new] animated:NO completion:^{
+            ARRStrongifyAndReturnIfNil(self);
+            self.mainView.subviewsVisible = YES;
+            self.state = kARRStartScreen;
+        }];
+    }
 }
 
 #pragma mark -
