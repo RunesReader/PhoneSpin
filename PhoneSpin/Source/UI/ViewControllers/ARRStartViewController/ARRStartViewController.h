@@ -8,6 +8,9 @@
 
 #import "ARRViewController.h"
 
+@class ARRMotionModel;
+
 @interface ARRStartViewController : ARRViewController
+@property (nonatomic, strong) ARRMotionModel *motionModel;
 
 @end

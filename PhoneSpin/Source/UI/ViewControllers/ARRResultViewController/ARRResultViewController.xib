@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARRResultViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ARRResultView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAb-75-wuJ">
+                    <rect key="frame" x="247" y="38" width="106" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buk-92-BYO">
+                    <rect key="frame" x="259" y="101" width="82" height="85"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="71"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn2-eS-QpI">
+                    <rect key="frame" x="276" y="203" width="47.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENTRIFUGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="myi-AT-RCj" userLabel="Name OfAchievement">
+                    <rect key="frame" x="211" y="239" width="179" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yue-9Z-bZK">
+                    <rect key="frame" x="224" y="315" width="151" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="TRY AGAIN"/>
+                    <connections>
+                        <action selector="onTryAgainButton:" destination="-1" eventType="touchUpInside" id="L6w-4a-Awc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YF-d9-Yhh">
+                    <rect key="frame" x="221" y="522" width="158" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <state key="normal" title="SEE CHART"/>
+                    <connections>
+                        <action selector="onSeeChartButton:" destination="-1" eventType="touchUpInside" id="ba2-zZ-ChY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8YF-d9-Yhh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1nM-wC-B65"/>
+                <constraint firstItem="buk-92-BYO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7H0-gI-rmX"/>
+                <constraint firstItem="Yue-9Z-bZK" firstAttribute="top" secondItem="myi-AT-RCj" secondAttribute="bottom" constant="40" id="9D4-Kg-rhv"/>
+                <constraint firstItem="NAb-75-wuJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Amh-B8-CLd"/>
+                <constraint firstAttribute="bottom" secondItem="8YF-d9-Yhh" secondAttribute="bottom" constant="30" id="BqN-5r-j76"/>
+                <constraint firstItem="buk-92-BYO" firstAttribute="top" secondItem="NAb-75-wuJ" secondAttribute="bottom" constant="27" id="BzO-5g-66x"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAb-75-wuJ" secondAttribute="trailing" constant="8" id="KpR-kq-KRf"/>
+                <constraint firstItem="NAb-75-wuJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OY9-fF-dsE"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="myi-AT-RCj" secondAttribute="trailing" constant="8" id="PaH-nG-8ED"/>
+                <constraint firstItem="NAb-75-wuJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="XFg-HQ-250"/>
+                <constraint firstItem="Yue-9Z-bZK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YMM-zh-PNK"/>
+                <constraint firstItem="myi-AT-RCj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Yhz-DD-sYG"/>
+                <constraint firstItem="Yn2-eS-QpI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCi-n3-HQf"/>
+                <constraint firstItem="Yn2-eS-QpI" firstAttribute="top" secondItem="buk-92-BYO" secondAttribute="bottom" constant="17" id="hrr-Ne-Ri1"/>
+                <constraint firstItem="myi-AT-RCj" firstAttribute="top" secondItem="Yn2-eS-QpI" secondAttribute="bottom" constant="12" id="sFZ-95-g2A"/>
+                <constraint firstItem="myi-AT-RCj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wl2-Dp-R4Y"/>
+            </constraints>
+            <connections>
+                <outlet property="achievement" destination="buk-92-BYO" id="8Wh-C3-dOt"/>
+                <outlet property="nameOfAchievement" destination="myi-AT-RCj" id="qIb-h4-piZ"/>
+            </connections>
+        </view>
+    </objects>
+</document>

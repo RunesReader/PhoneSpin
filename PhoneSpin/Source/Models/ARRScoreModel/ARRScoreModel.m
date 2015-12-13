@@ -10,22 +10,15 @@
 
 static NSString * const kARRKeyForHighScore = @"highScore";
 
-static NSString * const kARRLevelZeroName   = @"UNMOVABLE";
-static NSString * const kARRLevelOneName    = @"DOG'S TAIL";
-static NSString * const kARRLevelTwoName    = @"MILL";
-static NSString * const kARRLevelThreeName  = @"FAN";
-static NSString * const kARRLevelFourName   = @"CENTRIFUGE";
-static NSString * const kARRLevelFiveName   = @"LARGE HADRON COLLIDER";
-
-static const NSInteger  kARRLevelOne        = 1;
-static const NSInteger  kARRLevelTwo        = 5;
-static const NSInteger  kARRLevelThree      = 10;
-static const NSInteger  kARRLevelFour       = 15;
-static const NSInteger  kARRLevelFive       = 20;
+static NSString * const kARRPlistFactor     = @"LevelsFactor";
+static NSString * const kARRPlistNames      = @"LevelsNames";
+static NSString * const kARRPlistType       = @"plist";
 
 @interface ARRScoreModel ()
-@property (nonatomic, assign) NSInteger highScore;
-@property (nonatomic, assign) NSInteger maxCurrentScore;
+@property (nonatomic, assign) NSInteger     highScore;
+@property (nonatomic, assign) NSInteger     maxCurrentScore;
+@property (nonatomic, strong) NSArray       *levelsFactor;
+@property (nonatomic, strong) NSArray       *levelsNames;
 
 @end
 
@@ -42,6 +35,21 @@ static const NSInteger  kARRLevelFive       = 20;
     });
     
     return __model;
+}
+
+#pragma mark -
+#pragma mark Deallocation and Initializations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:kARRPlistFactor ofType:kARRPlistType];
+        self.levelsFactor = [NSArray arrayWithContentsOfFile:path];
+        path = [[NSBundle mainBundle] pathForResource:kARRPlistNames ofType:kARRPlistType];
+        self.levelsNames = [NSArray arrayWithContentsOfFile:path];
+    }
+    
+    return self;
 }
 
 #pragma mark -
@@ -85,19 +93,24 @@ static const NSInteger  kARRLevelFive       = 20;
 }
 
 - (NSString *)achievementNameWithScore:(NSInteger)score {
-    if (score < kARRLevelOne) {
-        return kARRLevelZeroName;
-    } else if (score < kARRLevelTwo) {
-        return kARRLevelOneName;
-    } else if (score < kARRLevelThree) {
-        return kARRLevelTwoName;
-    } else if (score < kARRLevelFour) {
-        return kARRLevelThreeName;
-    } else if (score < kARRLevelFive) {
-        return kARRLevelFourName;
+    NSInteger level = [self levelWithScore:score];
+    
+    return self.levelsNames[level];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (NSInteger)levelWithScore:(NSInteger)score {
+    NSInteger lastIndex = self.levelsFactor.count - 1;
+    for (NSInteger i = lastIndex; i >= 0; i--) {
+        NSInteger result = [self.levelsFactor[i] integerValue];
+        if (score >= result) {
+            return i;
+        }
     }
     
-    return kARRLevelFiveName;
+    return 0;
 }
 
 @end

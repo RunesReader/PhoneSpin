@@ -11,11 +11,6 @@
 #import "ARRContentModel.h"
 #import "ARRScoreModel.h"
 
-@interface ARRStartView ()
-@property (nonatomic, assign, getter=areSubviewsVisible)    BOOL    subviewsVisible;
-
-@end
-
 @implementation ARRStartView
 
 #pragma mark -
@@ -23,12 +18,14 @@
 
 - (void)dealloc {
     self.contentModel = nil;
+    self.scoreModel = nil;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
     self.contentModel = [ARRContentModel new];
+    self.scoreModel = [ARRScoreModel sharedScoreModel];
 }
 
 #pragma mark -
@@ -42,8 +39,13 @@
     }
 }
 
-#pragma mark -
-#pragma mark Private Accessors
+- (void)setScoreModel:(ARRScoreModel *)scoreModel {
+    if (_scoreModel != scoreModel) {
+        _scoreModel = scoreModel;
+        [self fillWithScoreModel:scoreModel];
+        self.subviewsVisible = YES;
+    }
+}
 
 - (void)setSubviewsVisible:(BOOL)subviewsVisible {
     if (_subviewsVisible != subviewsVisible) {
@@ -68,13 +70,13 @@
     self.contentImageView.image = model.image;
 }
 
+- (void)fillWithScoreModel:(ARRScoreModel *)model {
+    self.maxAchievement.text = [NSString stringWithFormat:@"%ld", (long)model.highScore];
+    self.nameOfAchievement.text = [model achievementNameWithScore:model.highScore];
+}
 
-
-#pragma mark -
-#pragma mark Event Handling
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.subviewsVisible = NO;
+- (void)fillWithCountdownValue:(NSInteger)value {
+    self.countDownText.text = [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 @end

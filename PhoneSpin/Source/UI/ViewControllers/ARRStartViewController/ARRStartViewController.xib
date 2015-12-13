@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,61 +12,53 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="left" id="i5M-Pr-FkT" customClass="ARRStartView">
+        <view clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="left" id="i5M-Pr-FkT" customClass="ARRStartView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enfold firmly yours phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qt-9g-Weo">
                     <rect key="frame" x="142" y="28" width="315" height="33.5"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your MAX achievement was:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-rp-Fnf">
                     <rect key="frame" x="173" y="335" width="254.5" height="24"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho6-mO-uhB">
                     <rect key="frame" x="260" y="378" width="79.5" height="85"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="71"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3I-qn-j3P">
                     <rect key="frame" x="276" y="475" width="47.5" height="24"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENTRIFUGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-vE-nQe">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CENTRIFUGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-vE-nQe" userLabel="Name OfAchievement">
                     <rect key="frame" x="210" y="539" width="179" height="36"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="iPhone" translatesAutoresizingMaskIntoConstraints="NO" id="qmF-XR-oTd">
                     <rect key="frame" x="181" y="69" width="237" height="173"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="qmF-XR-oTd" secondAttribute="height" multiplier="237:173" id="t6z-tS-Cty"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-bY-r8J">
-                    <rect key="frame" x="211" y="121" width="178" height="358.5"/>
-                    <animations/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-bY-r8J">
+                    <rect key="frame" x="218" y="121" width="164.5" height="358.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="300"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Yhx-rp-Fnf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qmF-XR-oTd" secondAttribute="bottom" constant="8" id="0xl-xy-4fA"/>
@@ -93,16 +85,16 @@
                 <outlet property="achievementText" destination="Yhx-rp-Fnf" id="sIx-CN-IKX"/>
                 <outlet property="contentImageView" destination="qmF-XR-oTd" id="QQl-z7-1eq"/>
                 <outlet property="countDownText" destination="EDT-bY-r8J" id="xkt-vJ-al0"/>
-                <outlet property="maxachievement" destination="Ho6-mO-uhB" id="bhs-Up-xO6"/>
-                <outlet property="nameOfachievement" destination="rCx-vE-nQe" id="Y5e-3c-cxU"/>
+                <outlet property="maxAchievement" destination="Ho6-mO-uhB" id="cPH-W9-jCd"/>
+                <outlet property="nameOfAchievement" destination="rCx-vE-nQe" id="QPA-Ib-W8I"/>
                 <outlet property="openingText" destination="7qt-9g-Weo" id="TuR-If-0CP"/>
                 <outlet property="spinsText" destination="u3I-qn-j3P" id="G2d-Jt-PZv"/>
                 <outletCollection property="contentsSubviews" destination="7qt-9g-Weo" id="Cfb-0A-Etd"/>
-                <outletCollection property="contentsSubviews" destination="Ho6-mO-uhB" id="Us5-Gs-enQ"/>
                 <outletCollection property="contentsSubviews" destination="u3I-qn-j3P" id="Ntv-fU-0bi"/>
-                <outletCollection property="contentsSubviews" destination="rCx-vE-nQe" id="g1w-03-Tiu"/>
                 <outletCollection property="contentsSubviews" destination="qmF-XR-oTd" id="26s-Lb-V1r"/>
                 <outletCollection property="contentsSubviews" destination="Yhx-rp-Fnf" id="BcP-lS-F4o"/>
+                <outletCollection property="contentsSubviews" destination="rCx-vE-nQe" id="KBe-ab-zhv"/>
+                <outletCollection property="contentsSubviews" destination="Ho6-mO-uhB" id="Vmv-6K-a9C"/>
             </connections>
             <point key="canvasLocation" x="299" y="348"/>
         </view>
