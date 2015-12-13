@@ -28,14 +28,16 @@ static const NSTimeInterval kARRTimerInterval   = 1.0;
 static const NSInteger      kARRStartDelay      = 3;
 static const NSInteger      kARRSpiningTime     = 8;
 
-static NSString * const     kARRBeepFile        = @"beep-09";
+static NSString * const     kARRStartFile       = @"robot-start";
+static NSString * const     kARRStopFile        = @"robot-stop";
 static NSString * const     kARRFartFile        = @"fart-01";
 static NSString * const     kARRWav             = @"wav";
 
 ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView)
 
 @interface ARRStartViewController () {
-    SystemSoundID   beepSound;
+    SystemSoundID   startSound;
+    SystemSoundID   stopSound;
     SystemSoundID   fartSound;
 }
 @property (nonatomic, assign)   NSInteger           counter;
@@ -50,7 +52,8 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 #pragma mark Deallocation and Initializations
 
 - (void)dealloc {
-    AudioServicesDisposeSystemSoundID(beepSound);
+    AudioServicesDisposeSystemSoundID(startSound);
+    AudioServicesDisposeSystemSoundID(stopSound);
     AudioServicesDisposeSystemSoundID(fartSound);
 }
 
@@ -59,7 +62,8 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     if (self) {
         self.motionModel = [ARRMotionModel sharedMotionModel];
         
-        [self createSound:&beepSound withResource:kARRBeepFile ofType:kARRWav];
+        [self createSound:&startSound withResource:kARRStartFile ofType:kARRWav];
+        [self createSound:&stopSound withResource:kARRStopFile ofType:kARRWav];
         [self createSound:&fartSound withResource:kARRFartFile ofType:kARRWav];
     }
     
@@ -147,7 +151,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     self.counter = kARRSpiningTime;
     self.state = kARRSecondCountdown;
     [self.motionModel startMotionDetect];
-    AudioServicesPlaySystemSound(beepSound);
+    AudioServicesPlaySystemSound(startSound);
 }
 
 - (void)stopSpinning {
@@ -155,7 +159,7 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
     self.state = kARRTimeIsUp;
     [self.motionModel stopMotionDetect];
     [[ARRScoreModel sharedScoreModel] setCurrentScore:self.motionModel.circlesCount];
-    AudioServicesPlaySystemSound(beepSound);
+    AudioServicesPlaySystemSound(stopSound);
 }
 
 - (void)createSound:(SystemSoundID *)sound withResource:(NSString *)resource ofType:(NSString *)type {

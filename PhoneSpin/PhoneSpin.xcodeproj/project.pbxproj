@@ -35,7 +35,8 @@
 		78B8E4831C1DC8120080A1DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */; };
 		78B8E4841C1DC8120080A1DF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4811C1DC8120080A1DF /* Default.png */; };
 		78B8E4851C1DC8120080A1DF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4821C1DC8120080A1DF /* Default@2x.png */; };
-		78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78F6DA561C1CA89600602D88 /* beep-09.wav */; };
+		78B8E4871C1DE3EA0080A1DF /* robot-start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4861C1DE3EA0080A1DF /* robot-start.wav */; };
+		78B8E4891C1DE3F60080A1DF /* robot-stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 78B8E4881C1DE3F60080A1DF /* robot-stop.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +86,8 @@
 		78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		78B8E4811C1DC8120080A1DF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		78B8E4821C1DC8120080A1DF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		78F6DA561C1CA89600602D88 /* beep-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-09.wav"; sourceTree = "<group>"; };
+		78B8E4861C1DE3EA0080A1DF /* robot-start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-start.wav"; sourceTree = "<group>"; };
+		78B8E4881C1DE3F60080A1DF /* robot-stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-stop.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +188,8 @@
 				78B8E4801C1DC8120080A1DF /* Default-568h@2x.png */,
 				78B8E4811C1DC8120080A1DF /* Default.png */,
 				78B8E4821C1DC8120080A1DF /* Default@2x.png */,
-				78F6DA561C1CA89600602D88 /* beep-09.wav */,
+				78B8E4861C1DE3EA0080A1DF /* robot-start.wav */,
+				78B8E4881C1DE3F60080A1DF /* robot-stop.wav */,
 				78B8E47E1C1D8E540080A1DF /* fart-01.wav */,
 				784359471C1B23AA00EA9B21 /* CoreMotion.framework */,
 				7830E5DB1C035B020096C6B7 /* Base.lproj */,
@@ -421,13 +424,14 @@
 			files = (
 				78B8E4851C1DC8120080A1DF /* Default@2x.png in Resources */,
 				784191111C10C3FD005D8B64 /* ARRFailViewController.xib in Resources */,
-				78F6DA571C1CA89600602D88 /* beep-09.wav in Resources */,
 				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				78B8E4831C1DC8120080A1DF /* Default-568h@2x.png in Resources */,
 				7841911A1C120966005D8B64 /* ARRResultViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
+				78B8E4891C1DE3F60080A1DF /* robot-stop.wav in Resources */,
 				78B8E47F1C1D8E540080A1DF /* fart-01.wav in Resources */,
 				784191051C0F1231005D8B64 /* LevelsFactor.plist in Resources */,
+				78B8E4871C1DE3EA0080A1DF /* robot-start.wav in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
 				784191071C0F1D17005D8B64 /* LevelsNames.plist in Resources */,
 				78B8E4841C1DC8120080A1DF /* Default.png in Resources */,

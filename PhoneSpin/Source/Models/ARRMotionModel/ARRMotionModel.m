@@ -11,7 +11,7 @@
 #import "ARRUniversalMacros.h"
 
 static const NSTimeInterval kARRUpdateInterval = 0.05f;
-static const double         kARRAccuracyFactor = 0.13f;
+static const double         kARRAccuracyFactor = 0.1f;
 
 @interface ARRMotionModel ()
 @property (nonatomic, strong) CMMotionManager           *motionManager;
@@ -58,7 +58,7 @@ static const double         kARRAccuracyFactor = 0.13f;
         
         ARRWeakify(self);
         [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
-                                                                toQueue:[NSOperationQueue mainQueue]
+                                                                toQueue:[NSOperationQueue new]
                                                             withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error)
          {
              if (error) {
@@ -68,10 +68,12 @@ static const double         kARRAccuracyFactor = 0.13f;
              }
              
              ARRStrongifyAndReturnIfNil(self);
-             [motion.attitude multiplyByInverseOfAttitude:initialAttitude];
+             double initialMagnitude = [self magnitudeFromAttitude:initialAttitude];
              double magnitude = [self magnitudeFromAttitude:motion.attitude];
              
-             if (magnitude < kARRAccuracyFactor) {
+             double delta = ABS(initialMagnitude - magnitude);
+             
+             if (delta < kARRAccuracyFactor) {
                  self.circlesCount++;
              }
              
